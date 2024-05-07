@@ -1,0 +1,22 @@
+{
+  "minecraft:recipes/decorations/crafting_table": {
+    "criteria": {
+      "unlock_right_away": "2024-03-19 15:35:01 -0400"
+    },
+    "done": true
+  },
+  "cobblemon:root": {
+    "criteria": {
+      "picked_starter": "2024-03-19 15:35:08 -0400"
+    },
+    "done": true
+  },
+  "minecraft:adventure/adventuring_time": {
+    "criteria": {
+      "minecraft:beach": "2024-03-19 15:35:03 -0400",
+      "minecraft:forest": "2024-03-19 15:35:31 -0400"
+    },
+    "done": false
+  },
+  "DataVersion": 3465
+}
