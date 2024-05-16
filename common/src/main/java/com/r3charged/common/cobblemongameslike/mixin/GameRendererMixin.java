@@ -1,7 +1,7 @@
 package com.r3charged.common.cobblemongameslike.mixin;
 
 import com.mojang.blaze3d.vertex.PoseStack;
-import com.r3charged.common.cobblemongameslike.WildCameraRenderer;
+import com.r3charged.common.cobblemongameslike.CameraOffseter;
 import net.minecraft.client.Camera;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.GameRenderer;
@@ -13,6 +13,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(GameRenderer.class)
 public class GameRendererMixin {
+
     @Shadow
     private Camera mainCamera;
 
@@ -28,6 +29,7 @@ public class GameRendererMixin {
             )
     private void onCameraSetup(float f, long l, PoseStack poseStack, CallbackInfo ci)
     {
-        WildCameraRenderer.getInstance().offsetCamera(this.mainCamera, Minecraft.getInstance().level, f);
+
+        CameraOffseter.getInstance().offsetCamera(this.mainCamera, Minecraft.getInstance().level, f);
     }
 }

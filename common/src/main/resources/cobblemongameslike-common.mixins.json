@@ -5,6 +5,12 @@
   "mixins": [
     "ShowdownInterpreterMixin"
   ],
-  "client": [],
+  "client": [
+    "CameraAccessor",
+    "GameRendererMixin",
+    "LevelRendererMixin",
+    "MinecraftMixin",
+    "PartySendBindingMixin"
+  ],
   "server": []
 }
