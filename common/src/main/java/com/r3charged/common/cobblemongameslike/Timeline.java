@@ -16,6 +16,7 @@ public class Timeline {
         if (queue.peek() != null)
             nextTick = queue.peek().getStartTick();
         if (nextTick <= tick) {
+            System.out.println(nextTick);
             Keyframe frame = queue.remove();
             frame.execute();
             completed_queue.add(frame);
@@ -34,5 +35,9 @@ public class Timeline {
 
     public void add(Keyframe keyframe) {
         queue.add(keyframe);
+    }
+
+    public boolean finishedPlaying() {
+        return queue.isEmpty();
     }
 }

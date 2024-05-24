@@ -1,7 +1,6 @@
 package com.r3charged.common.cobblemongameslike.mixin;
 
 import com.r3charged.common.cobblemongameslike.BattleController;
-import com.r3charged.common.cobblemongameslike.CameraOffseter;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.main.GameConfig;
 import org.spongepowered.asm.mixin.Mixin;
@@ -38,7 +37,6 @@ public class MinecraftMixin {
     {
         if(Minecraft.getInstance().level != null)
         {
-            //ShoulderInstance.getInstance().tick();
             BattleController.getInstance().tick();
         }
     }

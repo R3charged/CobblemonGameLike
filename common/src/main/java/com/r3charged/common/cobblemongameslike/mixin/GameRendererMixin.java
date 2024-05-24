@@ -1,7 +1,7 @@
 package com.r3charged.common.cobblemongameslike.mixin;
 
 import com.mojang.blaze3d.vertex.PoseStack;
-import com.r3charged.common.cobblemongameslike.CameraOffseter;
+import com.r3charged.common.cobblemongameslike.CameraModifier;
 import net.minecraft.client.Camera;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.GameRenderer;
@@ -10,6 +10,7 @@ import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(GameRenderer.class)
 public class GameRendererMixin {
@@ -30,6 +31,15 @@ public class GameRendererMixin {
     private void onCameraSetup(float f, long l, PoseStack poseStack, CallbackInfo ci)
     {
 
-        CameraOffseter.getInstance().offsetCamera(this.mainCamera, Minecraft.getInstance().level, f);
+        CameraModifier.getInstance().offsetCamera(this.mainCamera, Minecraft.getInstance().level, f);
+
     }
+
+    @Inject(method = "getFov", at = @At("RETURN"), cancellable = true)
+    private void injectGetFov(Camera camera, float f, boolean bl, CallbackInfoReturnable<Double> cir) {
+        double d = CameraModifier.getInstance().getZoom(f, cir.getReturnValue());
+
+        cir.setReturnValue(d);
+    }
+
 }

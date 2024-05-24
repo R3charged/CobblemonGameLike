@@ -3,11 +3,13 @@
   "minVersion": "0.8",
   "package": "com.r3charged.common.cobblemongameslike.mixin",
   "mixins": [
+    "BattleInitializeHandlerMixin",
     "ShowdownInterpreterMixin"
   ],
   "client": [
     "CameraAccessor",
     "GameRendererMixin",
+    "GuiMixin",
     "LevelRendererMixin",
     "MinecraftMixin",
     "PartySendBindingMixin"

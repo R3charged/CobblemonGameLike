@@ -1,6 +1,7 @@
 package com.r3charged.common.cobblemongameslike.keyframe;
 
-import com.r3charged.common.cobblemongameslike.CameraOffseter;
+import com.r3charged.common.cobblemongameslike.BattleController;
+import com.r3charged.common.cobblemongameslike.CameraModifier;
 
 public class OffsetKeyframe implements Keyframe {
 
@@ -26,7 +27,8 @@ public class OffsetKeyframe implements Keyframe {
     }
 
     public void execute() {
-        CameraOffseter.getInstance().setTarget(this.x, this.y, this.z, this.tickTransition);
+        CameraModifier.getInstance().setTarget(this.x, this.y, this.z, this.tickTransition);
+        System.out.println(BattleController.getInstance().getEnemy());
     }
 
 }

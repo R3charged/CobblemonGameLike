@@ -10,7 +10,6 @@ public class WildCameraInstance {
     private final int TICKS_IN_CRY = 100;
     private final int TICKS_TO_ZOOM_OUT = 100;
 
-    private boolean inBattle;
     private Vec3 targetOffset;
     private double targetPitchOffset;
     private double targetYawOffset;
@@ -46,11 +45,4 @@ public class WildCameraInstance {
         return CAMERA_INSTANCE;
     }
 
-    public boolean isInWildBattle() {
-        return inBattle;
-    }
-
-    public void setInWildBattle(boolean inBattle) {
-        this.inBattle = inBattle;
-    }
 }

@@ -6,7 +6,7 @@ Description: Unexpected error
 
 java.lang.NullPointerException: Cannot invoke "com.cobblemon.mod.common.api.battles.model.PokemonBattle.getStarted()" because the return value of "com.cobblemon.mod.common.battles.BattleRegistry.getBattleByParticipatingPlayerId(java.util.UUID)" is null
 	at com.r3charged.common.cobblemongameslike.BattleController.isInBattle(BattleController.java:33)
-	at com.r3charged.common.cobblemongameslike.CameraOffseter.offsetCamera(WildCameraRenderer.java:16)
+	at com.r3charged.common.cobblemongameslike.CameraModifier.offsetCamera(WildCameraRenderer.java:16)
 	at net.minecraft.client.renderer.GameRenderer.handler$zeg000$cobblemon_gameslike$onCameraSetup(GameRenderer.java:2121)
 	at net.minecraft.client.renderer.GameRenderer.renderLevel(GameRenderer.java:1102)
 	at net.minecraft.client.renderer.GameRenderer.render(GameRenderer.java:880)
@@ -27,7 +27,7 @@ A detailed walkthrough of the error, its code path and all known details is as f
 Thread: Render thread
 Stacktrace:
 	at com.r3charged.common.cobblemongameslike.BattleController.isInBattle(BattleController.java:33)
-	at com.r3charged.common.cobblemongameslike.CameraOffseter.offsetCamera(WildCameraRenderer.java:16)
+	at com.r3charged.common.cobblemongameslike.CameraModifier.offsetCamera(WildCameraRenderer.java:16)
 	at net.minecraft.client.renderer.GameRenderer.handler$zeg000$cobblemon_gameslike$onCameraSetup(GameRenderer.java:2121)
 	at net.minecraft.client.renderer.GameRenderer.renderLevel(GameRenderer.java:1102)
 
